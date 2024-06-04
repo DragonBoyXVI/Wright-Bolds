@@ -3,9 +3,9 @@ pentis
 
 
 - Player object:
-	-affected by gravity, and rises when an input is held
+	-affected by gravity, and rises when an input is held #
 	-has a hitbox, and can hit the floor and die
 	
 	-fine tune the flapping, jump higher when the input is held and have the player 
-	fall when it isnt
-	-player falls faster if you hold down
+	fall when it isnt #
+	-player falls faster if you hold down #

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cedvxiqpiuh11"]
+
+[ext_resource type="PackedScene" uid="uid://f457xqywsvfj" path="res://Wright Bolds/Components/Killbox/component_killbox.tscn" id="1_hmdmi"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qm2x6"]
+
+[node name="FloorBarrier" type="Node2D"]
+metadata/_edit_group_ = true
+
+[node name="ComponentKillbox" parent="." instance=ExtResource("1_hmdmi")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ComponentKillbox"]
+shape = SubResource("WorldBoundaryShape2D_qm2x6")

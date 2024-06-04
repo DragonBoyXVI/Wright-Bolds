@@ -13,3 +13,8 @@ class_name Player
 @export var state_machine: StateMachine
 
 
+signal player_killed
+func kill():
+	print( "oh nor" )
+	get_tree().quit.call_deferred()
+	pass
