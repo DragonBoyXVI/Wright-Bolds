@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cge8oy4nnrkt2"]
+
+[ext_resource type="Script" path="res://Wright Bolds/Player/player.gd" id="1_st6fu"]
+[ext_resource type="Texture2D" uid="uid://cq4r3rl8yc71r" path="res://Dragon Game Template/Moe_kobold_adventure_128x146.PNG" id="1_wsl42"]
+[ext_resource type="PackedScene" uid="uid://3amnyabo1v3c" path="res://Dragon Game Template/State Machine/state_machine.tscn" id="3_bhlvl"]
+[ext_resource type="Script" path="res://Wright Bolds/Player/PlayerFree.gd" id="4_2e6y7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t0sw3"]
+radius = 48.0
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("state_machine")]
+script = ExtResource("1_st6fu")
+state_machine = NodePath("StateMachine")
+
+[node name="AnimationPivot" type="Node2D" parent="."]
+editor_description = "The entire character model"
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimationPivot"]
+texture = ExtResource("1_wsl42")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_t0sw3")
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("3_bhlvl")]
+initial_state = NodePath("PlayerFree")
+
+[node name="PlayerFree" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
+script = ExtResource("4_2e6y7")
+player = NodePath("../..")

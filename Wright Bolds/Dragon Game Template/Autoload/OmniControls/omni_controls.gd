@@ -10,6 +10,7 @@ signal gui_show
 
 @export var gui: CanvasLayer
 var pause_on_not_focus := true
+var can_pause := true
 
 func _ready() -> void:
 	
@@ -19,7 +20,7 @@ func _ready() -> void:
 
 func _input( event: InputEvent ) -> void:
 	
-	if ( event.is_action_pressed( "Pause" ) ):
+	if ( event.is_action_pressed( "Pause" ) and can_pause ):
 		
 		var tree := get_tree()
 		

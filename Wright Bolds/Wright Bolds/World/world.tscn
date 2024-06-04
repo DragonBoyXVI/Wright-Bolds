@@ -1,7 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfrnsbxvfsraj"]
+[gd_scene load_steps=4 format=3 uid="uid://cfrnsbxvfsraj"]
 
 [ext_resource type="Script" path="res://Wright Bolds/World/World.gd" id="1_7kx71"]
+[ext_resource type="Texture2D" uid="uid://cq4r3rl8yc71r" path="res://Dragon Game Template/Moe_kobold_adventure_128x146.PNG" id="2_a43c5"]
+[ext_resource type="PackedScene" uid="uid://cge8oy4nnrkt2" path="res://Wright Bolds/Player/player.tscn" id="3_fx856"]
 
 [node name="World" type="Node"]
 editor_description = "Welcome to hell!!!"
 script = ExtResource("1_7kx71")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_a43c5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1280, 720)
+texture = ExtResource("2_a43c5")
+
+[node name="Player" parent="." instance=ExtResource("3_fx856")]
+position = Vector2(544, 0)

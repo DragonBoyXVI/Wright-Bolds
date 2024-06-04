@@ -15,7 +15,7 @@ config/description="20 Game Challenge
 1st entry
 Flappy Bird Clone"
 config/version="v1.0.0"
-config/tags=PackedStringArray("game", "template")
+config/tags=PackedStringArray("20_game_challenge", "clone", "flappy_bird", "game")
 run/main_scene="res://Wright Bolds/World/world.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 run/max_fps=30
@@ -33,6 +33,7 @@ MusicManager="*res://Dragon Game Template/Autoload/Music Manager/music_manager.t
 OmniControls="*res://Dragon Game Template/Autoload/OmniControls/omni_controls.tscn"
 Camera2DMain="*res://Dragon Game Template/Autoload/Camera 2D Dynamic/camera_2d_dynamic.tscn"
 _InfoDragonTemplate="*res://Dragon Game Template/Autoload/al_template_info.gd"
+Global="*res://Wright Bolds/Autoload/Global/al_global.gd"
 
 [debug]
 
@@ -150,16 +151,22 @@ Fullscreen={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194342,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
+Jump={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"echo":false,"script":null)
+]
+}
+Fall={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":44,"key_label":0,"unicode":44,"echo":false,"script":null)
+]
+}
 
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
 pointing/android/enable_long_press_as_right_click=true
 pointing/android/enable_pan_and_scale_gestures=true
-
-[internationalization]
-
-locale/translations=PackedStringArray("res://Dragon Game Template/Translation/Godot Translation Sheet - Sheet1.csv", "res://Dragon Game Template/Translation/Godot Translation Sheet - Sheet1.en.translation", "res://Dragon Game Template/Translation/Godot Translation Sheet - Sheet1.es.translation", "res://Dragon Game Template/Translation/Godot Translation Sheet - Sheet1.ja.translation")
 
 [layer_names]
 
