@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://be1wv8fv4ke17"
+path="res://.godot/imported/1_10sqr.flac.ogg-417b995ca12c9e0938642795f226a76c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Dragon Game Template/Songs/Test 0/1_10sqr.flac.ogg"
+dest_files=["res://.godot/imported/1_10sqr.flac.ogg-417b995ca12c9e0938642795f226a76c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=140.0
+beat_count=0
+bar_beats=4

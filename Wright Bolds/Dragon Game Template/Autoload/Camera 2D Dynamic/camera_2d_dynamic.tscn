@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmwh2bj21418l"]
+
+[ext_resource type="Script" path="res://Dragon Game Template/Autoload/Camera 2D Dynamic/camera_2d_dynamic.gd" id="1_1p56u"]
+[ext_resource type="PackedScene" uid="uid://3amnyabo1v3c" path="res://Dragon Game Template/State Machine/state_machine.tscn" id="2_kqo05"]
+[ext_resource type="Script" path="res://Dragon Game Template/Autoload/Camera 2D Dynamic/FollowObject.gd" id="3_lp4hf"]
+[ext_resource type="Script" path="res://Dragon Game Template/Autoload/Camera 2D Dynamic/FollowPoint.gd" id="4_44isy"]
+[ext_resource type="Script" path="res://Dragon Game Template/Autoload/Camera 2D Dynamic/Manual.gd" id="5_lunea"]
+
+[node name="Camera2DDynamic" type="Camera2D" node_paths=PackedStringArray("state_machine")]
+editor_description = "Main camera that can follow nodes or look at a point. Can be disabled in autoload."
+position = Vector2(640, 360)
+script = ExtResource("1_1p56u")
+state_machine = NodePath("StateMachine")
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("2_kqo05")]
+initial_state = NodePath("Manual")
+
+[node name="FollowObject" type="Node" parent="StateMachine" node_paths=PackedStringArray("camera")]
+script = ExtResource("3_lp4hf")
+camera = NodePath("../..")
+
+[node name="FollowPoint" type="Node" parent="StateMachine" node_paths=PackedStringArray("camera")]
+script = ExtResource("4_44isy")
+camera = NodePath("../..")
+
+[node name="Manual" type="Node" parent="StateMachine" node_paths=PackedStringArray("camera")]
+script = ExtResource("5_lunea")
+camera = NodePath("../..")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true

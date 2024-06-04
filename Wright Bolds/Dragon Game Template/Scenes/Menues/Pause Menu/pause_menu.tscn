@@ -1,0 +1,272 @@
+[gd_scene load_steps=2 format=3 uid="uid://h3tjxfyvimga"]
+
+[ext_resource type="Script" path="res://Dragon Game Template/Scenes/Menues/Pause Menu/pause_menu.gd" id="1_vdx13"]
+
+[node name="PauseMenu" type="Control" node_paths=PackedStringArray("node_colorrect", "node_menu", "node_resume_button", "node_settings_button", "node_exit_app_button", "node_menu_settings", "node_fps_label", "node_fps_hslider", "node_physics_label", "node_physics_hslider", "node_stretch_button", "node_pause_focus_button", "node_vol_master_label", "node_vol_master_hslider", "node_vol_music_label", "node_vol_music_hslider", "node_vol_voice_label", "node_vol_voice_hslider", "node_vol_sfx_label", "node_vol_sfx_hslider", "node_pause_song_button", "node_language_button", "node_button_flashing_lights")]
+process_mode = 2
+editor_description = "This node allows the game to be paused, as well as showing the entire pause menu."
+top_level = true
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vdx13")
+node_colorrect = NodePath("ColorRect")
+node_menu = NodePath("Menu")
+node_resume_button = NodePath("Menu/Main/VBoxContainer/ResumeButton")
+node_settings_button = NodePath("Menu/Main/VBoxContainer/SettingsButton")
+node_exit_app_button = NodePath("Menu/Main/VBoxContainer/ExitAppButton")
+node_menu_settings = NodePath("Menu/Settings")
+node_fps_label = NodePath("Menu/Settings/Engine/VBoxContainer/FPSLabel")
+node_fps_hslider = NodePath("Menu/Settings/Engine/VBoxContainer/FPSHSlider")
+node_physics_label = NodePath("Menu/Settings/Engine/VBoxContainer/PhysicsLabel")
+node_physics_hslider = NodePath("Menu/Settings/Engine/VBoxContainer/PhysicsHSlider")
+node_stretch_button = NodePath("Menu/Settings/Engine/VBoxContainer/StretchButton")
+node_pause_focus_button = NodePath("Menu/Settings/Game/VBoxContainer/PauseFocusButton")
+node_vol_master_label = NodePath("Menu/Settings/Audio/VBoxContainer/VolumeMasterLabel")
+node_vol_master_hslider = NodePath("Menu/Settings/Audio/VBoxContainer/VolumeMasterHSlider")
+node_vol_music_label = NodePath("Menu/Settings/Audio/VBoxContainer/VolumeMusicLabel")
+node_vol_music_hslider = NodePath("Menu/Settings/Audio/VBoxContainer/VolumeMusicHSlider")
+node_vol_voice_label = NodePath("Menu/Settings/Audio/VBoxContainer/VolumeVoiceLabel")
+node_vol_voice_hslider = NodePath("Menu/Settings/Audio/VBoxContainer/VolumeVoiceHSlider")
+node_vol_sfx_label = NodePath("Menu/Settings/Audio/VBoxContainer/VolumeSFXLabel")
+node_vol_sfx_hslider = NodePath("Menu/Settings/Audio/VBoxContainer/VolumeSFXHSlider")
+node_pause_song_button = NodePath("Menu/Settings/Audio/VBoxContainer/PauseSongButton")
+node_language_button = NodePath("Menu/Settings/Accessibility/VBoxContainer/LanguageButton")
+node_button_flashing_lights = NodePath("Menu/Settings/Accessibility/VBoxContainer/FlashingButton")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.215686)
+
+[node name="Menu" type="TabContainer" parent="."]
+layout_mode = 0
+anchor_left = 0.1
+anchor_top = 0.0888889
+anchor_right = 0.9
+anchor_bottom = 0.533333
+offset_bottom = -3.05176e-05
+tab_alignment = 1
+current_tab = 1
+tabs_visible = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Main" type="ScrollContainer" parent="Menu"]
+visible = false
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Main"]
+layout_mode = 2
+alignment = 1
+
+[node name="ResumeButton" type="Button" parent="Menu/Main/VBoxContainer"]
+layout_mode = 2
+text = "KEY_MENU_PAUSE_RESUME"
+
+[node name="SettingsButton" type="Button" parent="Menu/Main/VBoxContainer"]
+layout_mode = 2
+text = "KEY_MENU_PAUSE_SETTINGS"
+
+[node name="ExitAppButton" type="Button" parent="Menu/Main/VBoxContainer"]
+layout_mode = 2
+text = "KEY_MENU_PAUSE_EXIT_APP"
+
+[node name="Settings" type="TabContainer" parent="Menu"]
+layout_mode = 2
+tab_alignment = 1
+current_tab = 3
+
+[node name="Engine" type="ScrollContainer" parent="Menu/Settings"]
+visible = false
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Settings/Engine"]
+layout_mode = 2
+alignment = 1
+
+[node name="FPSLabel" type="Label" parent="Menu/Settings/Engine/VBoxContainer"]
+layout_mode = 2
+text = "KEY_MENU_SETTINGS_FPS"
+
+[node name="FPSHSlider" type="HSlider" parent="Menu/Settings/Engine/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Default: 30"
+max_value = 240.0
+value = 30.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+
+[node name="PhysicsLabel" type="Label" parent="Menu/Settings/Engine/VBoxContainer"]
+layout_mode = 2
+text = "KEY_MENU_SETTINGS_PHYSICS"
+
+[node name="PhysicsHSlider" type="HSlider" parent="Menu/Settings/Engine/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Default: 30"
+min_value = 24.0
+max_value = 120.0
+value = 30.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+
+[node name="StretchLabel" type="Label" parent="Menu/Settings/Engine/VBoxContainer"]
+layout_mode = 2
+text = "KEY_MENU_SETTINGS_STRETCH"
+
+[node name="StretchButton" type="OptionButton" parent="Menu/Settings/Engine/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Default: Canvas (2nd)"
+item_count = 3
+selected = 1
+allow_reselect = true
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Canvas"
+popup/item_1/id = 1
+popup/item_2/text = "Viewport"
+popup/item_2/id = 2
+
+[node name="Game" type="ScrollContainer" parent="Menu/Settings"]
+visible = false
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Settings/Game"]
+layout_mode = 2
+alignment = 1
+
+[node name="PauseFocusButton" type="CheckButton" parent="Menu/Settings/Game/VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "KEY_MENU_SETTINGS_PAUSE_FOCUS"
+
+[node name="Audio" type="ScrollContainer" parent="Menu/Settings"]
+visible = false
+layout_mode = 2
+follow_focus = true
+scroll_vertical = 96
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Settings/Audio"]
+layout_mode = 2
+alignment = 1
+
+[node name="VolumeMasterLabel" type="Label" parent="Menu/Settings/Audio/VBoxContainer"]
+layout_mode = 2
+text = "KEY_MENU_SETTINGS_VOL_MASTER"
+
+[node name="VolumeMasterHSlider" type="HSlider" parent="Menu/Settings/Audio/VBoxContainer"]
+layout_mode = 2
+value = 100.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+
+[node name="VolumeMusicLabel" type="Label" parent="Menu/Settings/Audio/VBoxContainer"]
+layout_mode = 2
+text = "KEY_MENU_SETTINGS_VOL_MUSIC"
+
+[node name="VolumeMusicHSlider" type="HSlider" parent="Menu/Settings/Audio/VBoxContainer"]
+layout_mode = 2
+value = 100.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+
+[node name="VolumeVoiceLabel" type="Label" parent="Menu/Settings/Audio/VBoxContainer"]
+layout_mode = 2
+text = "KEY_MENU_SETTINGS_VOL_VOICE"
+
+[node name="VolumeVoiceHSlider" type="HSlider" parent="Menu/Settings/Audio/VBoxContainer"]
+layout_mode = 2
+value = 100.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+
+[node name="VolumeSFXLabel" type="Label" parent="Menu/Settings/Audio/VBoxContainer"]
+layout_mode = 2
+text = "KEY_MENU_SETTINGS_VOL_SFX"
+
+[node name="VolumeSFXHSlider" type="HSlider" parent="Menu/Settings/Audio/VBoxContainer"]
+layout_mode = 2
+value = 100.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+
+[node name="PauseSongButton" type="CheckButton" parent="Menu/Settings/Audio/VBoxContainer"]
+layout_mode = 2
+text = "KEY_MENU_SETTINGS_PAUSE_SONG"
+
+[node name="Accessibility" type="ScrollContainer" parent="Menu/Settings"]
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Settings/Accessibility"]
+layout_mode = 2
+alignment = 1
+
+[node name="LanguageLabel" type="Label" parent="Menu/Settings/Accessibility/VBoxContainer"]
+layout_mode = 2
+text = "KEY_MENU_SETTINGS_LANGUAGE"
+
+[node name="LanguageButton" type="OptionButton" parent="Menu/Settings/Accessibility/VBoxContainer"]
+layout_mode = 2
+disabled = true
+item_count = 3
+selected = 0
+popup/item_0/text = "English"
+popup/item_0/id = 0
+popup/item_1/text = "(Español) Spanish"
+popup/item_1/id = 1
+popup/item_2/text = "(日本語) Japanese"
+popup/item_2/id = 2
+popup/item_2/disabled = true
+
+[node name="FlashingButton" type="CheckButton" parent="Menu/Settings/Accessibility/VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "KEY_MENU_SETTINGS_FLASHING_LIGHTS"
+
+[node name="PauseLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 42.0
+grow_horizontal = 2
+text = "KEY_MENU_PAUSE_LABEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Menu/Main/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Menu/Main/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Menu/Main/VBoxContainer/ExitAppButton" to="." method="_on_exit_app_button_pressed"]
+[connection signal="value_changed" from="Menu/Settings/Engine/VBoxContainer/FPSHSlider" to="." method="_on_fpsh_slider_value_changed"]
+[connection signal="value_changed" from="Menu/Settings/Engine/VBoxContainer/PhysicsHSlider" to="." method="_on_physics_h_slider_value_changed"]
+[connection signal="item_selected" from="Menu/Settings/Engine/VBoxContainer/StretchButton" to="." method="_on_stretch_button_item_selected"]
+[connection signal="toggled" from="Menu/Settings/Game/VBoxContainer/PauseFocusButton" to="." method="_on_pause_focus_button_toggled"]
+[connection signal="value_changed" from="Menu/Settings/Audio/VBoxContainer/VolumeMasterHSlider" to="." method="_on_volume_master_h_slider_value_changed"]
+[connection signal="value_changed" from="Menu/Settings/Audio/VBoxContainer/VolumeMusicHSlider" to="." method="_on_volume_music_h_slider_value_changed"]
+[connection signal="value_changed" from="Menu/Settings/Audio/VBoxContainer/VolumeVoiceHSlider" to="." method="_on_volume_voice_h_slider_value_changed"]
+[connection signal="value_changed" from="Menu/Settings/Audio/VBoxContainer/VolumeSFXHSlider" to="." method="_on_volume_sfxh_slider_value_changed"]
+[connection signal="toggled" from="Menu/Settings/Audio/VBoxContainer/PauseSongButton" to="." method="_on_pause_song_button_toggled"]
+[connection signal="item_selected" from="Menu/Settings/Accessibility/VBoxContainer/LanguageButton" to="." method="_on_language_button_item_selected"]
+[connection signal="toggled" from="Menu/Settings/Accessibility/VBoxContainer/FlashingButton" to="." method="_on_check_button_toggled"]

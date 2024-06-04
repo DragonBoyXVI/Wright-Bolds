@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://3amnyabo1v3c"]
+
+[ext_resource type="Script" path="res://Dragon Game Template/State Machine/state_machine.gd" id="1_74pgv"]
+
+[node name="StateMachine" type="Node"]
+editor_description = "Children of this node are states, call \"change\" to set the state directley."
+script = ExtResource("1_74pgv")

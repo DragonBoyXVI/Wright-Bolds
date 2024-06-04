@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvcqx2sq8wt77"]
+
+[ext_resource type="Script" path="res://Dragon Game Template/Autoload/OmniControls/omni_controls.gd" id="1_crnp5"]
+
+[node name="OmniControls" type="Node"]
+process_mode = 3
+editor_description = "Controls that are always processing, such as pausing and fullscreen."
+script = ExtResource("1_crnp5")

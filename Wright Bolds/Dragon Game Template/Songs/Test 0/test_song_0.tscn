@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://cto0udugo8xi1"]
+
+[ext_resource type="Script" path="res://Dragon Game Template/Songs/Test 0/test_song_0.gd" id="1_bvrs7"]
+[ext_resource type="AudioStream" uid="uid://be1wv8fv4ke17" path="res://Dragon Game Template/Songs/Test 0/1_10sqr.flac.ogg" id="2_65b2u"]
+[ext_resource type="AudioStream" uid="uid://b57hd8xjhus0v" path="res://Dragon Game Template/Songs/Test 0/2_saw2.flac.ogg" id="3_7avr5"]
+
+[sub_resource type="Animation" id="Animation_48djk"]
+resource_name = "music"
+length = 6.86
+loop_mode = 1
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Square")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_65b2u")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Saw")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_7avr5")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_igq6m"]
+_data = {
+"music": SubResource("Animation_48djk")
+}
+
+[node name="TestSong0" type="Node"]
+script = ExtResource("1_bvrs7")
+
+[node name="Square" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
+[node name="Saw" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_igq6m")
+}

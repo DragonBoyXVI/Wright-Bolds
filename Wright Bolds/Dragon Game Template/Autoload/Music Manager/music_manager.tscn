@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0uwjh5sgbsgg"]
+
+[ext_resource type="Script" path="res://Dragon Game Template/Autoload/Music Manager/music_manager.gd" id="1_aqfqf"]
+
+[node name="MusicManager" type="Node"]
+editor_description = "This handles all of the song instances set to be the children of this.
+All this should be doing is pausing/unpausing the music and instanciating the scenes."
+script = ExtResource("1_aqfqf")
