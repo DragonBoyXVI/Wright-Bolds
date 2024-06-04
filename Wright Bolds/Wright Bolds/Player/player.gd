@@ -10,7 +10,15 @@ class_name Player
 @export var weight: float = 1
 
 @export_group( "Nodes" )
-@export var state_machine: StateMachine
+@export var state_machine: StateMachine  
+
+
+func _process( _delta: float ) -> void:
+	
+	var fake_velocity := Vector2( 1920, velocity.y )
+	rotation = fake_velocity.angle()
+	
+	pass
 
 
 signal player_killed

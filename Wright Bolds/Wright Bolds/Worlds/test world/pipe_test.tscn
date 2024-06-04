@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmrkfyivc7h7x"]
+
+[ext_resource type="Script" path="res://Wright Bolds/Worlds/test world/pipe_test.gd" id="1_pg7wn"]
+[ext_resource type="PackedScene" uid="uid://273ofrlh0oer" path="res://Wright Bolds/Worlds/test world/pipe_test_upper.tscn" id="2_42ves"]
+[ext_resource type="PackedScene" uid="uid://dycfvflwqje54" path="res://Wright Bolds/Worlds/test world/pipe_test_lower.tscn" id="3_ao7v3"]
+[ext_resource type="Texture2D" uid="uid://cb5aky4h0lhe6" path="res://icon.svg" id="4_vrxpv"]
+
+[node name="PipeTest" type="Node2D" node_paths=PackedStringArray("upper_pipe", "lower_pipe")]
+script = ExtResource("1_pg7wn")
+upper_pipe = NodePath("PipeTestUpper")
+lower_pipe = NodePath("PipeTestLower")
+
+[node name="PipeTestUpper" parent="." instance=ExtResource("2_42ves")]
+
+[node name="PipeTestLower" parent="." instance=ExtResource("3_ao7v3")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-128, 0)
+texture = ExtResource("4_vrxpv")

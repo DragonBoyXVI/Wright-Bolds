@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dycfvflwqje54"]
+
+[ext_resource type="Script" path="res://Wright Bolds/Worlds/test world/pipe_test_lower.gd" id="1_dmg0h"]
+[ext_resource type="Texture2D" uid="uid://cb5aky4h0lhe6" path="res://icon.svg" id="2_x5c3p"]
+[ext_resource type="PackedScene" uid="uid://f457xqywsvfj" path="res://Wright Bolds/Components/Killbox/component_killbox.tscn" id="3_iyuhe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y62tj"]
+size = Vector2(128, 128)
+
+[node name="PipeTestLower" type="Node2D"]
+script = ExtResource("1_dmg0h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 720)
+texture = ExtResource("2_x5c3p")
+offset = Vector2(0, -64)
+
+[node name="ComponentKillbox" parent="." instance=ExtResource("3_iyuhe")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ComponentKillbox"]
+position = Vector2(0, 656)
+shape = SubResource("RectangleShape2D_y62tj")
+debug_color = Color(1, 0.0102092, 0.030341, 0.42)

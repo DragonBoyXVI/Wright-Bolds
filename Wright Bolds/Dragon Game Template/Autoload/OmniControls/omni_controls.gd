@@ -54,6 +54,7 @@ func _input( event: InputEvent ) -> void:
 			
 			pass
 		
+		window.set_input_as_handled()
 		pass
 	
 	

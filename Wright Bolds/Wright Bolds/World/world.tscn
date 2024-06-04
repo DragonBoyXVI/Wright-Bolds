@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfrnsbxvfsraj"]
+[gd_scene load_steps=7 format=3 uid="uid://cfrnsbxvfsraj"]
 
 [ext_resource type="Script" path="res://Wright Bolds/World/World.gd" id="1_7kx71"]
 [ext_resource type="Texture2D" uid="uid://cq4r3rl8yc71r" path="res://Dragon Game Template/Moe_kobold_adventure_128x146.PNG" id="2_a43c5"]
 [ext_resource type="PackedScene" uid="uid://cge8oy4nnrkt2" path="res://Wright Bolds/Player/player.tscn" id="3_fx856"]
 [ext_resource type="PackedScene" uid="uid://cedvxiqpiuh11" path="res://Wright Bolds/Worlds/floor_barrier.tscn" id="4_rp62h"]
+[ext_resource type="PackedScene" uid="uid://dmrkfyivc7h7x" path="res://Wright Bolds/Worlds/test world/pipe_test.tscn" id="5_k5g6i"]
+[ext_resource type="PackedScene" uid="uid://h3tjxfyvimga" path="res://Dragon Game Template/Scenes/Menues/Pause Menu/pause_menu.tscn" id="5_ywl4o"]
 
-[node name="World" type="Node"]
+[node name="World" type="Node" node_paths=PackedStringArray("gui_layer", "pause_menu")]
 editor_description = "Welcome to hell!!!"
 script = ExtResource("1_7kx71")
+gui_layer = NodePath("Gui")
+pause_menu = NodePath("Gui/PauseMenu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_a43c5")
@@ -16,8 +20,16 @@ texture = ExtResource("2_a43c5")
 position = Vector2(1280, 720)
 texture = ExtResource("2_a43c5")
 
-[node name="Player" parent="." instance=ExtResource("3_fx856")]
-position = Vector2(544, 0)
-
 [node name="FloorBarrier" parent="." instance=ExtResource("4_rp62h")]
 position = Vector2(0, 720)
+
+[node name="Player" parent="." instance=ExtResource("3_fx856")]
+position = Vector2(256, 0)
+
+[node name="PipeTest" parent="." instance=ExtResource("5_k5g6i")]
+position = Vector2(780, 0)
+
+[node name="Gui" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="Gui" instance=ExtResource("5_ywl4o")]
+visible = false
