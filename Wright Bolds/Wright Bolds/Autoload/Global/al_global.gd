@@ -2,4 +2,5 @@ extends Node
 
 
 ## variables that everyone can access
-var gravity: float = 980.0
+var gravity: float = 1200.0
+var fast_fall_value := 2
