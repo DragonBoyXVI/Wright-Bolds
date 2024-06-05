@@ -9,11 +9,14 @@ class_name StatePlayerFree
 @export var player: Player
 @export var jump_power: float = 900
 
+func enter():
+	player.position.y = 720.0 / 2
+
 
 func _physics_process( delta: float ) -> void:
 	var fast_fall := 1.0
-	if ( Input.is_action_pressed( "Fall" ) ): fast_fall = 2.0
-	elif( Input.is_action_pressed( "Jump" ) ): fast_fall = 0.5
+	if ( Input.is_action_pressed( "Backspace" ) ): fast_fall = 2.0
+	elif( Input.is_action_pressed( "Enter" ) ): fast_fall = 0.5
 	
 	# weight player
 	var gravity: float = Global.gravity * player.weight * delta * fast_fall
@@ -25,7 +28,7 @@ func _physics_process( delta: float ) -> void:
 	player.move_and_slide()
 	
 	# cap height
-	const y_limit := -100.0
+	const y_limit := -0.0
 	if ( player.position.y < y_limit ):
 		player.position.y = y_limit
 	
@@ -33,13 +36,14 @@ func _physics_process( delta: float ) -> void:
 
 func _unhandled_input( event: InputEvent ) -> void:
 	
-	if ( event.is_action_pressed( "Jump" ) ):
+	if ( event.is_action_pressed( "Enter" ) ):
 		
 		# make player jump
 		var down_velocity := player.velocity.y
 		down_velocity = max( down_velocity - jump_power, -jump_power )
 		player.velocity.y = down_velocity
 		
+		get_window().set_input_as_handled()
 		return
 	
 	pass

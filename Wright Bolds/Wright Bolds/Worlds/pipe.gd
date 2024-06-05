@@ -19,12 +19,12 @@ class_name Pipe
 func set_gap_position( spot: float ):
 	
 	if ( upper_pipe ):
-		var deviant: float = spot - ( ( gap_size / 2 ) * randf_range( 0.95, 1 ) )
+		var deviant: float = spot - ( ( gap_size / 2 ) * randf_range( 0.95, 1.05 ) )
 		if ( deviant < 1 ): deviant = 1
 		upper_pipe.set_size( deviant )
 	
 	if ( lower_pipe ):
-		var deviant: float = spot + ( ( gap_size / 2 ) * randf_range( 1, 1.05 ) )
+		var deviant: float = spot + ( ( gap_size / 2 ) * randf_range( 0.95, 1.05 ) )
 		if ( deviant > 719 ): deviant = 719
 		deviant = 720 - deviant
 		lower_pipe.set_size( deviant )

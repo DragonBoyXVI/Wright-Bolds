@@ -24,5 +24,7 @@ func _process( _delta: float ) -> void:
 signal player_killed
 func kill():
 	print( "oh nor" )
-	get_tree().quit.call_deferred()
+	print( "you got ", ScoreHandler.current_score, " points!" )
+	#get_tree().quit.call_deferred()
+	player_killed.emit()
 	pass

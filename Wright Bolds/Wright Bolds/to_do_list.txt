@@ -11,8 +11,14 @@ pentis
 	-player falls faster if you hold down #
 
 - gui:
-	-draw the current score
+	-draw the current score#
 
 - Moving obsticals:
-	-Basic pipe obstical, moves to the left and has an opening that you can go through
-	-Going through the pipe gives you a score
+	-Basic pipe obstical, moves to the left and has an opening that you can go through#
+	-Going through the pipe gives you a score#
+
+
+- Menuing:
+	-game over screen that shows score
+	-game over screen lets you try again
+	-play screen on startup#

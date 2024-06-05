@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://blkra4oa2oig6"]
+
+[ext_resource type="Script" path="res://Wright Bolds/gui elements/game over/game_over.gd" id="1_7m3cm"]
+
+[node name="GameOver" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7m3cm")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 42.0
+grow_horizontal = 2
+text = "Game Over!"
+horizontal_alignment = 1
+
+[node name="LabelCurrentScore" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 32.0
+offset_bottom = 74.0
+grow_horizontal = 2
+text = "You got {num} points!"
+horizontal_alignment = 1
+
+[node name="LabelHighScore" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 64.0
+offset_bottom = 106.0
+grow_horizontal = 2
+text = "saved high score: {num}"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="Label" parent="."]
+visible = false
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 96.0
+offset_bottom = 96.0
+grow_horizontal = 2
+text = "NEW HIGH SCORE!!!"
+horizontal_alignment = 1
+
+[node name="LabelInstruct" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press SPACE to try again!"
+horizontal_alignment = 1

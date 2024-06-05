@@ -28,3 +28,5 @@ initial_state = NodePath("PlayerFree")
 [node name="PlayerFree" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
 script = ExtResource("4_2e6y7")
 player = NodePath("../..")
+
+[node name="PlayerDisabled" type="Node" parent="StateMachine"]

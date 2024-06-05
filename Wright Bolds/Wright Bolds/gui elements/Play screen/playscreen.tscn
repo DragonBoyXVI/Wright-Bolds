@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bottu73ojh2st"]
+
+[ext_resource type="Script" path="res://Wright Bolds/gui elements/Play screen/playscreen.gd" id="1_1vclq"]
+
+[node name="Playscreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1vclq")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 136.0
+grow_horizontal = 2
+text = "Wright Bolds
+Press SPACE to jump!
+Hold COMMA to fall faster!"
+horizontal_alignment = 1

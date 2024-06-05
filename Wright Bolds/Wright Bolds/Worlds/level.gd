@@ -18,7 +18,8 @@ func _ready() -> void:
 	
 	
 	# place pipes
-	var pipe_offset := 1200.0
+	const off := 1800.0
+	var pipe_offset: float = off
 	for num in pipe_count:
 		
 		# make pipe
@@ -32,7 +33,8 @@ func _ready() -> void:
 		
 		pass
 	
-	pipe_offset -= 1200.0
+	pipe_offset -= off
+	@warning_ignore("narrowing_conversion") #FUCK YOUUUUUUUUUUUU
 	Global.pipe_respawn = pipe_offset
 	
 	pass
