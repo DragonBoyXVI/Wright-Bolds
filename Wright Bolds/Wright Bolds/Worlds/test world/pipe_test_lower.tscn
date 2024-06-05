@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://f457xqywsvfj" path="res://Wright Bolds/Components/Killbox/component_killbox.tscn" id="3_iyuhe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y62tj"]
+resource_local_to_scene = true
 size = Vector2(128, 128)
 
 [node name="PipeTestLower" type="Node2D"]

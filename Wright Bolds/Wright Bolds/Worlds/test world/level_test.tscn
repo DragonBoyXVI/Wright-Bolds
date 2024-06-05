@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://78fo34lpac08"]
+
+[ext_resource type="Script" path="res://Wright Bolds/Worlds/test world/level_test.gd" id="1_resoj"]
+[ext_resource type="PackedScene" uid="uid://dmrkfyivc7h7x" path="res://Wright Bolds/Worlds/test world/pipe_test.tscn" id="2_mjnw3"]
+
+[node name="LevelTest" type="Node"]
+script = ExtResource("1_resoj")
+pipe_scene = ExtResource("2_mjnw3")

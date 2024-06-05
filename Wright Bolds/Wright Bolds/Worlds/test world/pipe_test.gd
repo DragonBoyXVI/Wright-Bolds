@@ -2,7 +2,7 @@ extends Pipe
 
 
 func _ready() -> void:
-	set_gap_position( 200 )
+	random_pipe_spot()
 
 
 func _input( event: InputEvent ) -> void:

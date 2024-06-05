@@ -34,6 +34,7 @@ OmniControls="*res://Dragon Game Template/Autoload/OmniControls/omni_controls.ts
 Camera2DMain="*res://Dragon Game Template/Autoload/Camera 2D Dynamic/camera_2d_dynamic.tscn"
 _InfoDragonTemplate="*res://Dragon Game Template/Autoload/al_template_info.gd"
 Global="*res://Wright Bolds/Autoload/Global/al_global.gd"
+ScoreHandler="*res://Wright Bolds/Autoload/ScoreHandler/al_score_handler.gd"
 
 [debug]
 

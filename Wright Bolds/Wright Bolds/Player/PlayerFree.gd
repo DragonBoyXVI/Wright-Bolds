@@ -12,7 +12,8 @@ class_name StatePlayerFree
 
 func _physics_process( delta: float ) -> void:
 	var fast_fall := 1.0
-	if ( Input.is_action_pressed( "Fall" ) ): fast_fall = Global.fast_fall_value
+	if ( Input.is_action_pressed( "Fall" ) ): fast_fall = 2.0
+	elif( Input.is_action_pressed( "Jump" ) ): fast_fall = 0.5
 	
 	# weight player
 	var gravity: float = Global.gravity * player.weight * delta * fast_fall

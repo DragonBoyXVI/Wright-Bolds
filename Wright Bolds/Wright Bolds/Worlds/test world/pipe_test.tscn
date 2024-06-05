@@ -1,14 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmrkfyivc7h7x"]
+[gd_scene load_steps=7 format=3 uid="uid://dmrkfyivc7h7x"]
 
 [ext_resource type="Script" path="res://Wright Bolds/Worlds/test world/pipe_test.gd" id="1_pg7wn"]
 [ext_resource type="PackedScene" uid="uid://273ofrlh0oer" path="res://Wright Bolds/Worlds/test world/pipe_test_upper.tscn" id="2_42ves"]
 [ext_resource type="PackedScene" uid="uid://dycfvflwqje54" path="res://Wright Bolds/Worlds/test world/pipe_test_lower.tscn" id="3_ao7v3"]
 [ext_resource type="Texture2D" uid="uid://cb5aky4h0lhe6" path="res://icon.svg" id="4_vrxpv"]
+[ext_resource type="PackedScene" uid="uid://c1fr6deu53n4c" path="res://Wright Bolds/Components/Scorebox/component_scorebox.tscn" id="5_48i2m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nnt5"]
+size = Vector2(73, 720)
 
 [node name="PipeTest" type="Node2D" node_paths=PackedStringArray("upper_pipe", "lower_pipe")]
 script = ExtResource("1_pg7wn")
 upper_pipe = NodePath("PipeTestUpper")
 lower_pipe = NodePath("PipeTestLower")
+metadata/_edit_group_ = true
 
 [node name="PipeTestUpper" parent="." instance=ExtResource("2_42ves")]
 
@@ -17,3 +22,10 @@ lower_pipe = NodePath("PipeTestLower")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-128, 0)
 texture = ExtResource("4_vrxpv")
+
+[node name="ComponentScorebox" parent="." instance=ExtResource("5_48i2m")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ComponentScorebox"]
+position = Vector2(100.5, 360)
+shape = SubResource("RectangleShape2D_0nnt5")
+debug_color = Color(0.682353, 0.972549, 0, 0.419608)
