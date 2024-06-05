@@ -27,4 +27,8 @@ func kill():
 	print( "you got ", ScoreHandler.current_score, " points!" )
 	#get_tree().quit.call_deferred()
 	player_killed.emit()
+	
+	#Camera2DMain.set_state_follow_object( self )
+	#Camera2DMain.zoom_target = Vector2( 2, 2 )
+	
 	pass

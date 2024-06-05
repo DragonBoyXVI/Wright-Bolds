@@ -7,7 +7,7 @@ class_name Level
 
 
 @export_group( "Pipes" )
-@export var pipe_count: int = 10
+@export var pipe_count: int = 25
 @export var pipe_spacing: float = 800
 @export var pipe_scene: PackedScene
 

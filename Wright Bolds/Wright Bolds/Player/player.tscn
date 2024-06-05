@@ -21,6 +21,7 @@ texture = ExtResource("1_wsl42")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_t0sw3")
+disabled = true
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("3_bhlvl")]
 initial_state = NodePath("PlayerFree")
