@@ -7,7 +7,7 @@ class_name Level
 
 
 @export_group( "Pipes" )
-@export var pipe_count: int = 2
+@export var pipe_count: int = 10
 @export var pipe_spacing: float = 800
 @export var pipe_scene: PackedScene
 
@@ -22,7 +22,7 @@ func _ready() -> void:
 	for num in pipe_count:
 		
 		# make pipe
-		var new_pipe: Pipe = pipe_scene.instantiate( PackedScene.GEN_EDIT_STATE_MAIN )
+		var new_pipe: Pipe = pipe_scene.instantiate(  )
 		add_child( new_pipe )
 		
 		# position it
@@ -31,5 +31,8 @@ func _ready() -> void:
 		new_pipe.random_pipe_spot()
 		
 		pass
+	
+	pipe_offset -= 1200.0
+	Global.pipe_respawn = pipe_offset
 	
 	pass

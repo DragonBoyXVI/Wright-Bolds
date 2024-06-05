@@ -6,5 +6,5 @@ var gravity: float = 1200.0
 var current_level: Level
 
 ## piep stuff
-var pipe_speed := 600.0
-var pipe_respawn := 2400
+var pipe_speed: float = 600.0
+var pipe_respawn: float = 2400.0
