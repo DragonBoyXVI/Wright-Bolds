@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://do1t40kr332fi"
+path="res://.godot/imported/game_start_gingle.wav-0e3dd41969fa533c2d4443b8d1fe6886.sample"
+
+[deps]
+
+source_file="res://Wright Bolds/SFX/game_start_gingle.wav"
+dest_files=["res://.godot/imported/game_start_gingle.wav-0e3dd41969fa533c2d4443b8d1fe6886.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

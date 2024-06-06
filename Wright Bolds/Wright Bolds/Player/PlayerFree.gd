@@ -42,6 +42,8 @@ func _unhandled_input( event: InputEvent ) -> void:
 		var down_velocity := player.velocity.y
 		down_velocity = max( down_velocity - jump_power, -jump_power )
 		player.velocity.y = down_velocity
+		player.animation.play( "Flap" )
+		player.animation.seek( 0.0 )
 		
 		get_window().set_input_as_handled()
 		return

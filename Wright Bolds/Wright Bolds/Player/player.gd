@@ -10,7 +10,8 @@ class_name Player
 @export var weight: float = 1
 
 @export_group( "Nodes" )
-@export var state_machine: StateMachine  
+@export var state_machine: StateMachine
+@export var animation: AnimationPlayer
 
 
 func _process( _delta: float ) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cfrnsbxvfsraj"]
+[gd_scene load_steps=16 format=3 uid="uid://cfrnsbxvfsraj"]
 
 [ext_resource type="Script" path="res://Wright Bolds/World/World.gd" id="1_7kx71"]
 [ext_resource type="Texture2D" uid="uid://cq4r3rl8yc71r" path="res://Dragon Game Template/Moe_kobold_adventure_128x146.PNG" id="2_a43c5"]
@@ -9,6 +9,20 @@
 [ext_resource type="PackedScene" uid="uid://c7eo6eq1iymln" path="res://Wright Bolds/gui elements/basic gui/basic_gui.tscn" id="6_6iu28"]
 [ext_resource type="PackedScene" uid="uid://bottu73ojh2st" path="res://Wright Bolds/gui elements/Play screen/playscreen.tscn" id="8_anh7k"]
 [ext_resource type="PackedScene" uid="uid://blkra4oa2oig6" path="res://Wright Bolds/gui elements/game over/game_over.tscn" id="9_y8n3b"]
+[ext_resource type="AudioStream" uid="uid://do1t40kr332fi" path="res://Wright Bolds/SFX/game_start_gingle.wav" id="10_whev3"]
+[ext_resource type="AudioStream" uid="uid://46h3kr50kt6p" path="res://Wright Bolds/SFX/game_over_jingle.wav" id="11_6fj2v"]
+[ext_resource type="AudioStream" uid="uid://cwow5nnjr0cdl" path="res://Wright Bolds/SFX/point_0.wav" id="12_b4nsg"]
+[ext_resource type="AudioStream" uid="uid://b03o8pnfnqwpj" path="res://Wright Bolds/SFX/point_1.wav" id="13_m4ie1"]
+[ext_resource type="AudioStream" uid="uid://dqtqglelga7q5" path="res://Wright Bolds/SFX/point_2.wav" id="14_fkyrx"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fwqcv"]
+streams_count = 3
+stream_0/stream = ExtResource("12_b4nsg")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("13_m4ie1")
+stream_1/weight = 0.5
+stream_2/stream = ExtResource("14_fkyrx")
+stream_2/weight = 1.0
 
 [node name="World" type="Node" node_paths=PackedStringArray("gui_layer", "pause_menu")]
 editor_description = "Welcome to hell!!!"
@@ -40,13 +54,26 @@ position = Vector2(256, 0)
 [node name="BasicGui" parent="Gui" instance=ExtResource("6_6iu28")]
 visible = false
 
-[node name="PauseMenu" parent="Gui" instance=ExtResource("5_ywl4o")]
-visible = false
-
 [node name="Playscreen" parent="Gui" instance=ExtResource("8_anh7k")]
 
 [node name="GameOver" parent="Gui" instance=ExtResource("9_y8n3b")]
 visible = false
+
+[node name="PauseMenu" parent="Gui" instance=ExtResource("5_ywl4o")]
+visible = false
+
+[node name="AudioStreamGameStart" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_whev3")
+autoplay = true
+bus = &"Music"
+
+[node name="AudioStreamGameEnd" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_6fj2v")
+bus = &"Music"
+
+[node name="AudioStreamPoint" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_fwqcv")
+bus = &"SFX"
 
 [connection signal="player_killed" from="Player" to="." method="_on_player_player_killed"]
 [connection signal="player_killed" from="Player" to="Gui/GameOver" method="_on_player_player_killed"]

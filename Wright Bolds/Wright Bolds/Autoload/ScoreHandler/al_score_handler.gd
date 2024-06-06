@@ -17,6 +17,7 @@ func give_points( points: int ):
 	
 	current_score += points
 	new_high_score = ( current_score > current_high_score )
+	Global.pipe_speed += points * 5
 	
 	score_updated.emit()
 	
