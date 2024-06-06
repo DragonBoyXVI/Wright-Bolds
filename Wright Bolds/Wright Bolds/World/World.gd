@@ -22,6 +22,7 @@ func _ready() -> void:
 	#omni control signals
 	OmniControls.gui_hide.connect( gui_layer.hide )
 	OmniControls.gui_show.connect( gui_layer.show )
+	OmniControls.can_pause = false
 	
 	# score signals
 	ScoreHandler.score_updated.connect( $AudioStreamPoint.play.bind( 0.0 ) )
@@ -35,6 +36,7 @@ func _on_playscreen_start_game() -> void:
 	$Player.process_mode = Node.PROCESS_MODE_INHERIT
 	Global.current_level.process_mode = Node.PROCESS_MODE_INHERIT
 	Global.pipe_speed = 600.0
+	OmniControls.can_pause = true
 	
 	pass
 

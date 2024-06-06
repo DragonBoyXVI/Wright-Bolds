@@ -1,8 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://78fo34lpac08"]
+[gd_scene load_steps=4 format=3 uid="uid://78fo34lpac08"]
 
 [ext_resource type="Script" path="res://Wright Bolds/Worlds/test world/level_test.gd" id="1_resoj"]
 [ext_resource type="PackedScene" uid="uid://dmrkfyivc7h7x" path="res://Wright Bolds/Worlds/test world/pipe_test.tscn" id="2_mjnw3"]
+[ext_resource type="Texture2D" uid="uid://cb5aky4h0lhe6" path="res://icon.svg" id="3_4ybil"]
 
-[node name="LevelTest" type="Node"]
+[node name="LevelTest" type="Node" node_paths=PackedStringArray("bg_layer")]
 script = ExtResource("1_resoj")
 pipe_scene = ExtResource("2_mjnw3")
+bg_layer = NodePath("Background")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+texture_repeat = 2
+position = Vector2(640, 0.999999)
+scale = Vector2(10, 6.39063)
+texture = ExtResource("3_4ybil")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background"]
+texture_repeat = 2
+position = Vector2(1920, 1)
+scale = Vector2(10, 6.39063)
+texture = ExtResource("3_4ybil")
