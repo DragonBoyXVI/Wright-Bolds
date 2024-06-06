@@ -37,6 +37,10 @@ func _ready() -> void:
 	@warning_ignore("narrowing_conversion") #FUCK YOUUUUUUUUUUUU
 	Global.pipe_respawn = pipe_offset
 	
+	
+	# score update signal
+	ScoreHandler.score_updated.connect( _on_score_updated )
+	
 	pass
 
 
@@ -51,5 +55,13 @@ func _process( delta: float ) -> void:
 	bg_layer.offset.x -= Global.pipe_speed * delta * parallax_factor
 	if ( bg_layer.offset.x < -repeat_at ):
 		bg_layer.offset.x += repeat_at
+	
+	pass
+
+
+func _on_score_updated():
+	
+	if ( ScoreHandler.current_score % pipe_count == 0 ):
+		print( "special thing goes here" )
 	
 	pass

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://273ofrlh0oer"]
 
 [ext_resource type="Script" path="res://Wright Bolds/Worlds/test world/pipe_test_upper.gd" id="1_5ji8f"]
-[ext_resource type="Texture2D" uid="uid://cb5aky4h0lhe6" path="res://icon.svg" id="2_iynnn"]
+[ext_resource type="Texture2D" uid="uid://0qmyv0sx31k2" path="res://Wright Bolds/Worlds/test world/pipe_basic.png" id="2_erjxj"]
 [ext_resource type="PackedScene" uid="uid://f457xqywsvfj" path="res://Wright Bolds/Components/Killbox/component_killbox.tscn" id="3_1rkvj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebk2b"]
@@ -12,8 +12,9 @@ size = Vector2(128, 128)
 script = ExtResource("1_5ji8f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_iynnn")
-offset = Vector2(0, 64)
+scale = Vector2(1, -1)
+texture = ExtResource("2_erjxj")
+offset = Vector2(0, 274)
 
 [node name="ComponentKillbox" parent="." instance=ExtResource("3_1rkvj")]
 

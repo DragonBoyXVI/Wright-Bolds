@@ -4,8 +4,9 @@ extends PipeSegment
 func set_size( size: float ):
 	
 	# sprite
-	const sprite_size := 128.0
-	$Sprite2D.scale.y = size / sprite_size
+	#const sprite_size := 128.0
+	#$Sprite2D.scale.y = size / sprite_size
+	$Sprite2D.position.y = size
 	
 	# collision
 	var shape_node: CollisionShape2D = $ComponentKillbox/CollisionShape2D
