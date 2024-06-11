@@ -624,11 +624,12 @@ _data = {
 "RESET": SubResource("Animation_p7517")
 }
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("state_machine", "animation")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("state_machine", "animation", "anim_pivot")]
 collision_layer = 2
 script = ExtResource("1_st6fu")
 state_machine = NodePath("StateMachine")
 animation = NodePath("AnimationPlayer")
+anim_pivot = NodePath("AnimationPivot")
 metadata/_edit_group_ = true
 
 [node name="AnimationPivot" type="Node2D" parent="."]

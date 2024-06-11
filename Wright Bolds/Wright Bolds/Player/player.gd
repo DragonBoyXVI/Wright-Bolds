@@ -12,12 +12,13 @@ class_name Player
 @export_group( "Nodes" )
 @export var state_machine: StateMachine
 @export var animation: AnimationPlayer
+@export var anim_pivot: Node2D
 
 
 func _process( _delta: float ) -> void:
 	
 	var fake_velocity := Vector2( 1920, velocity.y )
-	rotation = fake_velocity.angle()
+	anim_pivot.rotation = fake_velocity.angle()
 	
 	pass
 
