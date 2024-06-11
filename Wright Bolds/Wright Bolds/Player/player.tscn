@@ -1,145 +1,242 @@
-[gd_scene load_steps=11 format=3 uid="uid://cge8oy4nnrkt2"]
+[gd_scene load_steps=18 format=3 uid="uid://cge8oy4nnrkt2"]
 
 [ext_resource type="Script" path="res://Wright Bolds/Player/player.gd" id="1_st6fu"]
-[ext_resource type="Texture2D" uid="uid://bp3xmb6nmtgmc" path="res://Wright Bolds/Player/001-002.png" id="2_4m2mr"]
+[ext_resource type="Texture2D" uid="uid://bhth6t8y5eegs" path="res://Wright Bolds/Player/Assets/0/001-007.png" id="2_m3lr5"]
 [ext_resource type="PackedScene" uid="uid://3amnyabo1v3c" path="res://Dragon Game Template/State Machine/state_machine.tscn" id="3_bhlvl"]
-[ext_resource type="Texture2D" uid="uid://cbpbbmwrisgqm" path="res://Wright Bolds/Player/001-001.png" id="3_vcc5g"]
+[ext_resource type="Texture2D" uid="uid://bw0ka1w3jn3kj" path="res://Wright Bolds/Player/Assets/0/001-005.png" id="3_n2ur8"]
+[ext_resource type="Texture2D" uid="uid://dji7fgu6e4r8e" path="res://Wright Bolds/Player/Assets/0/001-006.png" id="3_sdxy7"]
 [ext_resource type="Script" path="res://Wright Bolds/Player/PlayerFree.gd" id="4_2e6y7"]
+[ext_resource type="Texture2D" uid="uid://debg42ugekc5j" path="res://Wright Bolds/Player/Assets/0/001-004.png" id="4_7mj28"]
+[ext_resource type="Texture2D" uid="uid://dx5ettlyfk0h5" path="res://Wright Bolds/Player/Assets/0/001-003.png" id="6_xp7pf"]
+[ext_resource type="Texture2D" uid="uid://nariwqiqyypl" path="res://Wright Bolds/Player/Assets/0/001-001.png" id="7_2ch85"]
+[ext_resource type="Texture2D" uid="uid://xvi8ksst6pf5" path="res://Wright Bolds/Player/Assets/0/001-002.png" id="8_revuq"]
+[ext_resource type="Texture2D" uid="uid://dl02shknjxtor" path="res://Wright Bolds/Player/Assets/0/001-000.png" id="9_wquqk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bhx6g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7mj28")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gw1qu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_xp7pf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2ch85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_revuq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wquqk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t0sw3"]
 radius = 32.0
 
-[sub_resource type="Animation" id="Animation_12v2j"]
+[sub_resource type="Animation" id="Animation_gkdci"]
 resource_name = "Flap"
-length = 0.5
-step = 0.05
+loop_mode = 1
+step = 0.0416667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPivot/SpritewingBack:position")
+tracks/0/path = NodePath("AnimationPivot/BoldFrontBody:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.166667, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(25, -53), Vector2(37, -13), Vector2(39, 7), Vector2(39, -4)]
+"values": [Vector2(-18, -7), Vector2(-14, -3), Vector2(-18, -7)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPivot/SpritewingBack:rotation")
+tracks/1/path = NodePath("AnimationPivot/BoldFrontBody:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.208333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [2.79329, 3.14637, 3.53984, 3.4257]
+"values": [0.0587588, 0.0336911, -0.118931, -0.138619, 0.0587588]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPivot/SpritewingBack:scale")
+tracks/2/path = NodePath("AnimationPivot/BoldFrontBody:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.666667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.75, -0.75), Vector2(0.75, -1.25), Vector2(0.75, 0.58113), Vector2(0.75, -0.75)]
+"values": [Vector2(1, 1), Vector2(1, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPivot/SpriteWingFore:position")
+tracks/3/path = NodePath("AnimationPivot/BoldFrontBody/BoldFrontHead:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
+"times": PackedFloat32Array(0, 0.166667, 0.666667, 0.916667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-17, -24), Vector2(-26, -9), Vector2(-37, 19), Vector2(-27, 8)]
+"values": [Vector2(4.40402, -44.3351), Vector2(2.87882, -40.9477), Vector2(4.40402, -44.3351), Vector2(4.40402, -44.3351)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("AnimationPivot/SpriteWingFore:rotation")
+tracks/4/path = NodePath("AnimationPivot/BoldFrontBody/BoldFrontHead:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.666667, 0.75, 0.916667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.438823, -0.0359022, -0.503557, -0.333428]
+"values": [0.146444, -0.0715084, -0.224264, 0.146444, 0.231902, 0.146444]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("AnimationPivot/SpriteWingFore:scale")
+tracks/5/path = NodePath("AnimationPivot/BoldFrontBody/BoldFrontHead:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.666667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.11992, 1.39974), Vector2(1, -0.633016), Vector2(1, 1)]
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPivot/BoldFrontBody/BoldFrontHead:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPivot/BoldFrontArms:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-5, -43), Vector2(-6, -38), Vector2(-5.6, -40)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimationPivot/BoldFrontArms:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.0416667, 0.166667, 0.25, 0.5, 0.625, 0.666667),
+"transitions": PackedFloat32Array(34.2967, 1, 1, 1, 1, 15.455, 1),
+"update": 0,
+"values": [1.19377, 0.253129, -0.204686, -0.247069, 0.168161, 1.06782, 0.583391]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AnimationPivot/BoldFrontArms:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AnimationPivot/BoldFrontArms:frame")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.0416667, 0.0833333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 3, 0]
 }
 
-[sub_resource type="Animation" id="Animation_8v2t1"]
+[sub_resource type="Animation" id="Animation_p7517"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPivot/SpritewingBack:position")
+tracks/0/path = NodePath("AnimationPivot/BoldFrontBody:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(25, -38)]
+"values": [Vector2(-18, -7)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPivot/SpritewingBack:rotation")
+tracks/1/path = NodePath("AnimationPivot/BoldFrontBody:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [3.14159]
+"values": [0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPivot/SpritewingBack:scale")
+tracks/2/path = NodePath("AnimationPivot/BoldFrontBody:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.75, -0.75)]
+"values": [Vector2(1, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPivot/SpriteWingFore:position")
+tracks/3/path = NodePath("AnimationPivot/BoldFrontBody/BoldFrontHead:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-26, -14)]
+"values": [Vector2(1, -44)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("AnimationPivot/SpriteWingFore:rotation")
+tracks/4/path = NodePath("AnimationPivot/BoldFrontBody/BoldFrontHead:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -151,7 +248,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("AnimationPivot/SpriteWingFore:scale")
+tracks/5/path = NodePath("AnimationPivot/BoldFrontBody/BoldFrontHead:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -160,87 +257,71 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
-
-[sub_resource type="Animation" id="Animation_ji1ua"]
-resource_name = "Rise"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPivot/SpritewingBack:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPivot/BoldFrontBody/BoldFrontHead:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPivot/BoldFrontArms:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(25, -38)]
+"values": [Vector2(-5, -43)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPivot/SpritewingBack:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [3.14159]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPivot/SpritewingBack:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.75, -0.75)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPivot/SpriteWingFore:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimationPivot/BoldFrontArms:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AnimationPivot/SpriteWingFore:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AnimationPivot/BoldFrontArms:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("AnimationPivot/SpriteWingFore:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AnimationPivot/BoldFrontArms:frame")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-26, -14)]
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bvioo"]
 _data = {
-"Flap": SubResource("Animation_12v2j"),
-"RESET": SubResource("Animation_8v2t1"),
-"Rise": SubResource("Animation_ji1ua")
+"Flap": SubResource("Animation_gkdci"),
+"RESET": SubResource("Animation_p7517")
 }
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("state_machine", "animation")]
@@ -253,20 +334,27 @@ metadata/_edit_group_ = true
 [node name="AnimationPivot" type="Node2D" parent="."]
 editor_description = "The entire character model"
 
-[node name="SpritewingBack" type="Sprite2D" parent="AnimationPivot"]
-position = Vector2(25, -38)
-rotation = 3.14159
-scale = Vector2(0.75, -0.75)
-texture = ExtResource("3_vcc5g")
-offset = Vector2(-110, -78)
+[node name="PlaneBack" type="Sprite2D" parent="AnimationPivot"]
+texture = ExtResource("2_m3lr5")
 
-[node name="SpriteBase" type="Sprite2D" parent="AnimationPivot"]
-texture = ExtResource("2_4m2mr")
+[node name="BoldFrontBody" type="Sprite2D" parent="AnimationPivot"]
+position = Vector2(-18, -7)
+texture = ExtResource("3_sdxy7")
+offset = Vector2(0, -24)
 
-[node name="SpriteWingFore" type="Sprite2D" parent="AnimationPivot"]
-position = Vector2(-26, -14)
-texture = ExtResource("3_vcc5g")
-offset = Vector2(-110, -78)
+[node name="BoldFrontHead" type="AnimatedSprite2D" parent="AnimationPivot/BoldFrontBody"]
+position = Vector2(1, -44)
+sprite_frames = SubResource("SpriteFrames_bhx6g")
+offset = Vector2(-8, -24)
+
+[node name="PlaneFront" type="Sprite2D" parent="AnimationPivot"]
+texture = ExtResource("3_n2ur8")
+offset = Vector2(0, 5)
+
+[node name="BoldFrontArms" type="AnimatedSprite2D" parent="AnimationPivot"]
+position = Vector2(-5, -43)
+sprite_frames = SubResource("SpriteFrames_gw1qu")
+offset = Vector2(-8, 40)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_t0sw3")
@@ -284,4 +372,3 @@ player = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_bvioo")
 }
-speed_scale = 0.65
