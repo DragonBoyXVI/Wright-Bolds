@@ -14,7 +14,7 @@ script = ExtResource("1_dmg0h")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 720)
 texture = ExtResource("2_t6una")
-offset = Vector2(0, 272)
+offset = Vector2(0, 296)
 
 [node name="ComponentKillbox" parent="." instance=ExtResource("3_iyuhe")]
 

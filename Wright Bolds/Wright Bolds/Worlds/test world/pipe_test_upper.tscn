@@ -14,7 +14,7 @@ script = ExtResource("1_5ji8f")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1, -1)
 texture = ExtResource("2_erjxj")
-offset = Vector2(0, 274)
+offset = Vector2(0, 296)
 
 [node name="ComponentKillbox" parent="." instance=ExtResource("3_1rkvj")]
 
