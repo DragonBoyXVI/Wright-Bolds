@@ -1,25 +1,56 @@
-[gd_scene load_steps=4 format=3 uid="uid://78fo34lpac08"]
+[gd_scene load_steps=8 format=3 uid="uid://78fo34lpac08"]
 
 [ext_resource type="Script" path="res://Wright Bolds/Worlds/test world/level_test.gd" id="1_resoj"]
 [ext_resource type="PackedScene" uid="uid://dmrkfyivc7h7x" path="res://Wright Bolds/Worlds/test world/pipe_test.tscn" id="2_mjnw3"]
-[ext_resource type="Texture2D" uid="uid://cb5aky4h0lhe6" path="res://icon.svg" id="3_4ybil"]
+[ext_resource type="Texture2D" uid="uid://d12hmblto2jmo" path="res://Wright Bolds/Worlds/test world/iamges/001.png" id="3_568df"]
+[ext_resource type="Texture2D" uid="uid://ct4u2vo864rep" path="res://Wright Bolds/Worlds/test world/iamges/003.png" id="4_g3is7"]
+[ext_resource type="Texture2D" uid="uid://b3dmhy3pfhjli" path="res://Wright Bolds/Worlds/test world/iamges/001-000.png" id="5_p8gwv"]
+[ext_resource type="Texture2D" uid="uid://dhtiym7nypg11" path="res://Wright Bolds/Worlds/test world/iamges/001-002.png" id="6_85cxr"]
+[ext_resource type="Texture2D" uid="uid://cisc7grx30cr5" path="res://Wright Bolds/Worlds/test world/iamges/001-001.png" id="7_k3g26"]
 
-[node name="LevelTest" type="Node" node_paths=PackedStringArray("bg_layer")]
+[node name="LevelTest" type="Node" node_paths=PackedStringArray("sidewalk", "building", "shit")]
 script = ExtResource("1_resoj")
+sidewalk = NodePath("Background/Sidewalk")
+building = NodePath("Background/Buildings")
+shit = NodePath("Background/Shit")
 pipe_scene = ExtResource("2_mjnw3")
-bg_layer = NodePath("Background")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -10
 
-[node name="Sprite2D" type="Sprite2D" parent="Background"]
-texture_repeat = 2
-position = Vector2(640, 0.999999)
-scale = Vector2(10, 6.39063)
-texture = ExtResource("3_4ybil")
+[node name="Buildings" type="Sprite2D" parent="Background"]
+texture = ExtResource("4_g3is7")
+offset = Vector2(640, 360)
 
-[node name="Sprite2D2" type="Sprite2D" parent="Background"]
-texture_repeat = 2
-position = Vector2(1920, 1)
-scale = Vector2(10, 6.39063)
-texture = ExtResource("3_4ybil")
+[node name="Buildings2" type="Sprite2D" parent="Background/Buildings"]
+position = Vector2(1280, 0)
+texture = ExtResource("4_g3is7")
+offset = Vector2(640, 360)
+
+[node name="Sidewalk" type="Sprite2D" parent="Background"]
+position = Vector2(0, 720)
+texture = ExtResource("3_568df")
+offset = Vector2(640, -88)
+
+[node name="Sidewalk2" type="Sprite2D" parent="Background/Sidewalk"]
+position = Vector2(1280, 0)
+texture = ExtResource("3_568df")
+offset = Vector2(640, -88)
+
+[node name="Shit" type="Node2D" parent="Background"]
+position = Vector2(741, 588)
+
+[node name="Trash" type="Sprite2D" parent="Background/Shit"]
+visible = false
+position = Vector2(3, -40)
+texture = ExtResource("5_p8gwv")
+
+[node name="Hydrant" type="Sprite2D" parent="Background/Shit"]
+visible = false
+position = Vector2(2, -22)
+texture = ExtResource("6_85cxr")
+
+[node name="Sign" type="Sprite2D" parent="Background/Shit"]
+visible = false
+position = Vector2(-14, -106)
+texture = ExtResource("7_k3g26")

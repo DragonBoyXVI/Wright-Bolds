@@ -37,10 +37,6 @@ _InfoDragonTemplate="*res://Dragon Game Template/Autoload/al_template_info.gd"
 Global="*res://Wright Bolds/Autoload/Global/al_global.gd"
 ScoreHandler="*res://Wright Bolds/Autoload/ScoreHandler/al_score_handler.gd"
 
-[debug]
-
-settings/stdout/print_fps=true
-
 [display]
 
 window/size/viewport_width=1280

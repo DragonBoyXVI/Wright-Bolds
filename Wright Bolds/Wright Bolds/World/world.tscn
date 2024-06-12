@@ -41,6 +41,8 @@ texture = ExtResource("2_a43c5")
 
 [node name="LevelTest" parent="." instance=ExtResource("3_qhmp3")]
 process_mode = 4
+pipe_count = 25
+pipe_spacing = 800.0
 
 [node name="FloorBarrier" parent="." instance=ExtResource("4_rp62h")]
 position = Vector2(0, 720)

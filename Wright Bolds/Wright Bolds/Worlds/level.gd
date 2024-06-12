@@ -43,20 +43,12 @@ func _ready() -> void:
 	
 	pass
 
+#
+#@export_group( "Scrolling Background" )
+#@export var bg_layer: CanvasLayer
+#@export var repeat_at: float = 1920 / 1.5
+#@export var parallax_factor: float = 0.25
 
-@export_group( "Scrolling Background" )
-@export var bg_layer: CanvasLayer
-@export var repeat_at: float = 1920 / 1.5
-@export var parallax_factor: float = 0.25
-
-
-func _process( delta: float ) -> void:
-	
-	bg_layer.offset.x -= Global.pipe_speed * delta * parallax_factor
-	if ( bg_layer.offset.x < -repeat_at ):
-		bg_layer.offset.x += repeat_at
-	
-	pass
 
 
 func _on_score_updated():
