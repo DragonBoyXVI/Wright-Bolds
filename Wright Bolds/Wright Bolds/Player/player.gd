@@ -13,6 +13,7 @@ class_name Player
 @export var state_machine: StateMachine
 @export var animation: AnimationPlayer
 @export var anim_pivot: Node2D
+@export var sound: AudioStreamPlayer
 
 
 func _process( _delta: float ) -> void:

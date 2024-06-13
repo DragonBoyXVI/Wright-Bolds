@@ -47,3 +47,11 @@ func _process( delta: float ) -> void:
 		pass
 	
 	pass
+
+
+func _on_score_updated():
+	
+	var score := ScoreHandler.current_score
+	if ( score > 0 and score % pipe_count == 0 ):
+		special_thing.emit()
+		$GPUParticles2D.emitting = true

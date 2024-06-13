@@ -1,12 +1,28 @@
-[gd_scene load_steps=8 format=3 uid="uid://78fo34lpac08"]
+[gd_scene load_steps=11 format=3 uid="uid://78fo34lpac08"]
 
 [ext_resource type="Script" path="res://Wright Bolds/Worlds/test world/level_test.gd" id="1_resoj"]
 [ext_resource type="PackedScene" uid="uid://dmrkfyivc7h7x" path="res://Wright Bolds/Worlds/test world/pipe_test.tscn" id="2_mjnw3"]
 [ext_resource type="Texture2D" uid="uid://d12hmblto2jmo" path="res://Wright Bolds/Worlds/test world/iamges/001.png" id="3_568df"]
+[ext_resource type="Texture2D" uid="uid://ds6w28xbxejuh" path="res://Wright Bolds/Worlds/test world/iamges/002.png" id="4_077xd"]
 [ext_resource type="Texture2D" uid="uid://ct4u2vo864rep" path="res://Wright Bolds/Worlds/test world/iamges/003.png" id="4_g3is7"]
 [ext_resource type="Texture2D" uid="uid://b3dmhy3pfhjli" path="res://Wright Bolds/Worlds/test world/iamges/001-000.png" id="5_p8gwv"]
 [ext_resource type="Texture2D" uid="uid://dhtiym7nypg11" path="res://Wright Bolds/Worlds/test world/iamges/001-002.png" id="6_85cxr"]
 [ext_resource type="Texture2D" uid="uid://cisc7grx30cr5" path="res://Wright Bolds/Worlds/test world/iamges/001-001.png" id="7_k3g26"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4k382"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(64, 32, 1)
+angle_min = -90.0
+angle_max = 90.0
+gravity = Vector3(-64, 96, 0)
+linear_accel_max = 100.0
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ls1ak"]
+width = 8
+height = 8
 
 [node name="LevelTest" type="Node" node_paths=PackedStringArray("sidewalk", "building", "shit")]
 script = ExtResource("1_resoj")
@@ -25,6 +41,16 @@ offset = Vector2(640, 360)
 [node name="Buildings2" type="Sprite2D" parent="Background/Buildings"]
 position = Vector2(1280, 0)
 texture = ExtResource("4_g3is7")
+offset = Vector2(640, 360)
+
+[node name="IForgorAndAmTooLazyToFix2" type="Sprite2D" parent="Background/Buildings/Buildings2"]
+editor_description = "i had a reason to do this, i just forgot what it was"
+texture = ExtResource("4_077xd")
+offset = Vector2(640, 360)
+
+[node name="IForgorAndAmTooLazyToFix" type="Sprite2D" parent="Background/Buildings"]
+editor_description = "i had a reason to do this, i just forgot what it was"
+texture = ExtResource("4_077xd")
 offset = Vector2(640, 360)
 
 [node name="Sidewalk" type="Sprite2D" parent="Background"]
@@ -54,3 +80,13 @@ texture = ExtResource("6_85cxr")
 visible = false
 position = Vector2(-14, -106)
 texture = ExtResource("7_k3g26")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(563, -31)
+emitting = false
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_4k382")
+texture = SubResource("NoiseTexture2D_ls1ak")
+lifetime = 4.0
+one_shot = true
+explosiveness = 1.0

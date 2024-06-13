@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cge8oy4nnrkt2"]
+[gd_scene load_steps=28 format=3 uid="uid://cge8oy4nnrkt2"]
 
 [ext_resource type="Script" path="res://Wright Bolds/Player/player.gd" id="1_st6fu"]
 [ext_resource type="Texture2D" uid="uid://bhth6t8y5eegs" path="res://Wright Bolds/Player/Assets/0/001-007.png" id="2_m3lr5"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://2iha0ivafuwd" path="res://Wright Bolds/Player/Assets/1/001-010.png" id="7_b21bm"]
 [ext_resource type="Texture2D" uid="uid://xvi8ksst6pf5" path="res://Wright Bolds/Player/Assets/0/001-002.png" id="8_revuq"]
 [ext_resource type="Texture2D" uid="uid://dl02shknjxtor" path="res://Wright Bolds/Player/Assets/0/001-000.png" id="9_wquqk"]
+[ext_resource type="AudioStream" uid="uid://prltiaqt14kr" path="res://Wright Bolds/Player/Assets/drac_summon_magic_0.wav" id="18_q2gjm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8y5h6"]
 animations = [{
@@ -624,12 +625,19 @@ _data = {
 "RESET": SubResource("Animation_p7517")
 }
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("state_machine", "animation", "anim_pivot")]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8j6vx"]
+random_pitch = 1.05
+streams_count = 1
+stream_0/stream = ExtResource("18_q2gjm")
+stream_0/weight = 1.0
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("state_machine", "animation", "anim_pivot", "sound")]
 collision_layer = 2
 script = ExtResource("1_st6fu")
 state_machine = NodePath("StateMachine")
 animation = NodePath("AnimationPlayer")
 anim_pivot = NodePath("AnimationPivot")
+sound = NodePath("AudioStreamPlayer")
 metadata/_edit_group_ = true
 
 [node name="AnimationPivot" type="Node2D" parent="."]
@@ -688,3 +696,8 @@ player = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_bvioo")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_8j6vx")
+volume_db = -5.0
+bus = &"SFX"

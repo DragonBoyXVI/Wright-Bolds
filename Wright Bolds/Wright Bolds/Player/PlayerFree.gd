@@ -44,6 +44,7 @@ func _unhandled_input( event: InputEvent ) -> void:
 		player.velocity.y = down_velocity
 		player.animation.play( "Flap" )
 		player.animation.seek( 0.0 )
+		player.sound.play( 0.0 )
 		
 		get_window().set_input_as_handled()
 		return

@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://ckibladqk88h4"
+
+[deps]
+
+files=["res://Dragon Game Template/Translation/Godot Translation Sheet - Sheet1.en.translation", "res://Dragon Game Template/Translation/Godot Translation Sheet - Sheet1.es.translation", "res://Dragon Game Template/Translation/Godot Translation Sheet - Sheet1.ja.translation"]
+
+source_file="res://Dragon Game Template/Translation/Godot Translation Sheet - Sheet1.csv"
+dest_files=["res://Dragon Game Template/Translation/Godot Translation Sheet - Sheet1.en.translation", "res://Dragon Game Template/Translation/Godot Translation Sheet - Sheet1.es.translation", "res://Dragon Game Template/Translation/Godot Translation Sheet - Sheet1.ja.translation"]
+
+[params]
+
+compress=true
+delimiter=0

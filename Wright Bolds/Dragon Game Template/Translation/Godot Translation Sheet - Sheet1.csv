@@ -1,0 +1,42 @@
+"Lang right, keys down",en,es,ja
+KEY_LANG_DISCLAIMER,"This text is digitally translated, and may differ from the original meaning in unintended ways.",Este texto está traducido digitalmente y puede diferir del significado original de manera no deseada.,テキストをデジタル化したり、オリジナルの署名を印刷したりすることはできません。
+,,,
+KEY_MENU_PAUSE_LABEL,Paused,En pausa,一時停止中
+KEY_MENU_PAUSE_RESUME,Resume,Reanudar,再開する
+KEY_MENU_PAUSE_SETTINGS,Settings,Ajustes,設定
+KEY_MENU_PAUSE_EXIT_APP,Quit to Desktop,Salir al escritorio,終了してデスクトップに戻る
+,,,
+KEY_MENU_PAUSE_TAB_ENGINE,Engine,Motor,エンジン
+KEY_MENU_SETTINGS_FPS,FPS: {fps},FPS: {fps},FPS: {fps}
+KEY_MENU_SETTINGS_PHYSICS,Physics Speed: {fps},Velocidad física: {fps},物理速度: {fps}
+KEY_MENU_SETTINGS_STRETCH,Scaling Mode,Modo de escala,スケーリングモード
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+KEY_MENU_PAUSE_TAB_GAME,Game,Juego,ゲーム
+KEY_MENU_SETTINGS_PAUSE_FOCUS,Pause on Lost Focus,Pausa en caso de pérdida de enfoque,集中力を失ったときに一時停止する
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+KEY_MENU_PAUSE_TAB_AUDIO,Audio: {vol}%,Audio: {vol}%,オーディオ: {vol}%
+KEY_MENU_SETTINGS_VOL_MASTER,Master: {vol}%,Maestro: {vol}%,マスター: {vol}%
+KEY_MENU_SETTINGS_VOL_MUSIC,Music: {vol}%,Música: {vol}%,音楽: {vol}%
+KEY_MENU_SETTINGS_VOL_VOICE,Voice: {vol}%,Voz: {vol}%,音声: {vol}%
+KEY_MENU_SETTINGS_VOL_SFX,SFX: {vol}%,Efectos de sonido: {vol}%,SFX: {vol}%
+KEY_MENU_SETTINGS_PAUSE_SONG,Pause Music in Pause Menu,Pausar música en el menú de pausa,一時停止メニューで音楽を一時停止する
+,,,
+,,,
+,,,
+,,,
+KEY_MENU_PAUSE_TAB_ACCESS,Accessibility ,Accesibilidad ,アクセシビリティ 
+KEY_MENU_SETTINGS_LANGUAGE,Language (WIP),Idioma (WIP),言語 (WIP)
+KEY_MENU_SETTINGS_FLASHING_LIGHTS,Flashing Lights,Luces parpadeantes,点滅する光

@@ -160,6 +160,10 @@ pointing/emulate_touch_from_mouse=true
 pointing/android/enable_long_press_as_right_click=true
 pointing/android/enable_pan_and_scale_gestures=true
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://Dragon Game Template/Translation/Godot Translation Sheet - Sheet1.csv", "res://Dragon Game Template/Translation/Godot Translation Sheet - Sheet1.en.translation", "res://Dragon Game Template/Translation/Godot Translation Sheet - Sheet1.es.translation", "res://Dragon Game Template/Translation/Godot Translation Sheet - Sheet1.ja.translation")
+
 [layer_names]
 
 2d_physics/layer_1="Wall"

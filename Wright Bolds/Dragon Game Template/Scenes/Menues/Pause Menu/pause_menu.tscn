@@ -56,10 +56,12 @@ anchor_right = 0.9
 anchor_bottom = 0.533333
 offset_bottom = -3.05176e-05
 tab_alignment = 1
+current_tab = 1
 tabs_visible = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Main" type="ScrollContainer" parent="Menu"]
+visible = false
 layout_mode = 2
 follow_focus = true
 horizontal_scroll_mode = 0
@@ -73,7 +75,6 @@ layout_mode = 2
 text = "Resume"
 
 [node name="SettingsButton" type="Button" parent="Menu/Main/VBoxContainer"]
-visible = false
 layout_mode = 2
 text = "Settings"
 
@@ -83,10 +84,9 @@ layout_mode = 2
 text = "Quit"
 
 [node name="Settings" type="TabContainer" parent="Menu"]
-visible = false
 layout_mode = 2
 tab_alignment = 1
-current_tab = 3
+current_tab = 2
 
 [node name="Engine" type="ScrollContainer" parent="Menu/Settings"]
 visible = false
@@ -100,7 +100,8 @@ alignment = 1
 
 [node name="FPSLabel" type="Label" parent="Menu/Settings/Engine/VBoxContainer"]
 layout_mode = 2
-text = "KEY_MENU_SETTINGS_FPS"
+text = "FPS: {fps}
+"
 
 [node name="FPSHSlider" type="HSlider" parent="Menu/Settings/Engine/VBoxContainer"]
 layout_mode = 2
@@ -108,12 +109,12 @@ tooltip_text = "Default: 30"
 max_value = 240.0
 value = 30.0
 rounded = true
-tick_count = 5
+tick_count = 6
 ticks_on_borders = true
 
 [node name="PhysicsLabel" type="Label" parent="Menu/Settings/Engine/VBoxContainer"]
 layout_mode = 2
-text = "KEY_MENU_SETTINGS_PHYSICS"
+text = "Physics Speed: {fps}"
 
 [node name="PhysicsHSlider" type="HSlider" parent="Menu/Settings/Engine/VBoxContainer"]
 layout_mode = 2
@@ -122,12 +123,12 @@ min_value = 24.0
 max_value = 120.0
 value = 30.0
 rounded = true
-tick_count = 5
+tick_count = 6
 ticks_on_borders = true
 
 [node name="StretchLabel" type="Label" parent="Menu/Settings/Engine/VBoxContainer"]
 layout_mode = 2
-text = "KEY_MENU_SETTINGS_STRETCH"
+text = "Scaling Mode"
 
 [node name="StretchButton" type="OptionButton" parent="Menu/Settings/Engine/VBoxContainer"]
 layout_mode = 2
@@ -155,13 +156,11 @@ alignment = 1
 [node name="PauseFocusButton" type="CheckButton" parent="Menu/Settings/Game/VBoxContainer"]
 layout_mode = 2
 button_pressed = true
-text = "KEY_MENU_SETTINGS_PAUSE_FOCUS"
+text = "Pause When Focus is Lost"
 
 [node name="Audio" type="ScrollContainer" parent="Menu/Settings"]
-visible = false
 layout_mode = 2
 follow_focus = true
-scroll_vertical = 96
 horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu/Settings/Audio"]
@@ -170,53 +169,57 @@ alignment = 1
 
 [node name="VolumeMasterLabel" type="Label" parent="Menu/Settings/Audio/VBoxContainer"]
 layout_mode = 2
-text = "KEY_MENU_SETTINGS_VOL_MASTER"
+text = "Master: {vol}"
 
 [node name="VolumeMasterHSlider" type="HSlider" parent="Menu/Settings/Audio/VBoxContainer"]
 layout_mode = 2
-value = 100.0
+value = 80.0
 rounded = true
-tick_count = 5
+tick_count = 6
 ticks_on_borders = true
 
 [node name="VolumeMusicLabel" type="Label" parent="Menu/Settings/Audio/VBoxContainer"]
 layout_mode = 2
-text = "KEY_MENU_SETTINGS_VOL_MUSIC"
+text = "Music: {vol}"
 
 [node name="VolumeMusicHSlider" type="HSlider" parent="Menu/Settings/Audio/VBoxContainer"]
 layout_mode = 2
 value = 100.0
 rounded = true
-tick_count = 5
+tick_count = 6
 ticks_on_borders = true
 
 [node name="VolumeVoiceLabel" type="Label" parent="Menu/Settings/Audio/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "KEY_MENU_SETTINGS_VOL_VOICE"
 
 [node name="VolumeVoiceHSlider" type="HSlider" parent="Menu/Settings/Audio/VBoxContainer"]
+visible = false
 layout_mode = 2
 value = 100.0
 rounded = true
-tick_count = 5
+tick_count = 6
 ticks_on_borders = true
 
 [node name="VolumeSFXLabel" type="Label" parent="Menu/Settings/Audio/VBoxContainer"]
 layout_mode = 2
-text = "KEY_MENU_SETTINGS_VOL_SFX"
+text = "SFX: {vol}"
 
 [node name="VolumeSFXHSlider" type="HSlider" parent="Menu/Settings/Audio/VBoxContainer"]
 layout_mode = 2
 value = 100.0
 rounded = true
-tick_count = 5
+tick_count = 6
 ticks_on_borders = true
 
 [node name="PauseSongButton" type="CheckButton" parent="Menu/Settings/Audio/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "KEY_MENU_SETTINGS_PAUSE_SONG"
 
 [node name="Accessibility" type="ScrollContainer" parent="Menu/Settings"]
+visible = false
 layout_mode = 2
 follow_focus = true
 horizontal_scroll_mode = 0
@@ -227,9 +230,10 @@ alignment = 1
 
 [node name="LanguageLabel" type="Label" parent="Menu/Settings/Accessibility/VBoxContainer"]
 layout_mode = 2
-text = "KEY_MENU_SETTINGS_LANGUAGE"
+text = "Sorry, nothing here!"
 
 [node name="LanguageButton" type="OptionButton" parent="Menu/Settings/Accessibility/VBoxContainer"]
+visible = false
 layout_mode = 2
 disabled = true
 item_count = 3
@@ -243,6 +247,7 @@ popup/item_2/id = 2
 popup/item_2/disabled = true
 
 [node name="FlashingButton" type="CheckButton" parent="Menu/Settings/Accessibility/VBoxContainer"]
+visible = false
 layout_mode = 2
 button_pressed = true
 text = "KEY_MENU_SETTINGS_FLASHING_LIGHTS"

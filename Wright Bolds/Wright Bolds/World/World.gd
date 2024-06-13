@@ -22,10 +22,13 @@ func _ready() -> void:
 	#omni control signals
 	OmniControls.gui_hide.connect( gui_layer.hide )
 	OmniControls.gui_show.connect( gui_layer.show )
-	OmniControls.can_pause = false
+	#OmniControls.can_pause = false
 	
 	# score signals
 	ScoreHandler.score_updated.connect( $AudioStreamPoint.play.bind( 0.0 ) )
+	
+	
+	$AudioStreamGameStart.play.call_deferred()
 	
 	pass
 

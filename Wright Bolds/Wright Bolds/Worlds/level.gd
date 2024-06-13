@@ -51,9 +51,11 @@ func _ready() -> void:
 
 
 
+signal special_thing
 func _on_score_updated():
 	
 	if ( ScoreHandler.current_score % pipe_count == 0 ):
 		print( "special thing goes here" )
+		special_thing.emit()
 	
 	pass
